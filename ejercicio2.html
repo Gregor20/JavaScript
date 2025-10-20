@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        //prompt -- > para pedir algo al usuario
+        //la informacion gurdada es una cadena
+        //parseInt --> "2" --> 2 (convierte a int)
+
+        //Pedimos al usuario nombre y edad
+        let nombre = prompt("Cual es tu nombre?");
+        let edad =parseInt(prompt("Cual es tu edad?"));
+
+        //Muestra un mensaje si es mayor o menor de edad
+        //if-else --> if(condicion) --> instrucciones, else ...
+        if(edad >= 18){
+            console.log("Felicidades eres mayor de edad!");
+        }else{
+            console.log("Aun eres menor de edad");
+        }
+
+        //Calcular y mostrar cuantos años quedan hasta los 100 años
+        let añosPara100 = 100 - edad;
+        console.log(`Te faltan ${añosPara100} años para los 100`);
+
+        //for --> for (contador; condicion; incremento){instrucciones}
+        //Mostramos los numeros del 1 al 10
+        for(let i = 0; i <= 10; i++){
+            console.log(i);
+        }
+
+        //Generar numeros aleatorios
+        //Math.random()--> genera un numero aleatorio entre 0 y 1 (1 no incluido)
+        //Math.floor()--> Trunca un numero: 8.4 = 8 --> 9.87 = 9
+        // Hay que sumarle 1
+        let numAleatorio = Math.floor(Math.random() * 10 + 1);
+        //console.log(numAleatorio)
+
+        //Permite al usuario adivinar el numero con un maximo de 3 intentos
+        let intentos = 3;
+        for(let i = 1; i <= intentos; i++){
+            let adivinanza = parseInt(prompt("Adivina el numero: "));
+            if(adivinanza === numAleatorio){
+                console.log("Correcto adivinaste el numero!");
+                break; // Salimos del bucle
+            }else{
+                console.log("Incorrecto, intentalo de nuevo");
+            }
+            if(i === 3){
+                console.log(`Lo siento, el numero era ${numAleatorio}`);
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

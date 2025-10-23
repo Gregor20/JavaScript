@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2CP2</title>
+</head>
+<body>
+    <div style="width: 80%; /* Asegura que el div no ocupe todo el ancho y se pueda centrar */
+            margin-left: auto; 
+            margin-right: auto;
+            margin-top: 100px;
+            margin-bottom: 20%;
+            height: auto; /* La altura debe ser automática para el contenido */">
+        <h1>UNIDAD 2. SINTAXIS DE LENGUAJE</h1>
+        <h2>Caso práctico 2. Factorial</h2>
+        <ol>
+            <li>Crea una página web que pida un número entero positivo al usuario y calcule su factorial</li>
+        </ol>
+        <script>
+            var numero = parseInt(prompt("Dime un número entero positivo: "));
+            var factorial = 1;
+
+            if(numero <= 0){
+                console.log("El número debe ser mayor a 0")
+            }
+            for(let i = 1; i <= numero; i++){
+                factorial *= i;
+            }
+            console.log(`${numero}! = ${factorial}`);
+        </script>
+    </div>
+    
+</body>
+</html>

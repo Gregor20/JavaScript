@@ -12,8 +12,12 @@
 
         var numero_positivo = parseInt(prompt("Dime un número entero positivo: "))
 
-        console.log(numero_positivo)        
+        //Si lo que el usuario escribe no es un número o no es positivo, la página no mostrará nada. Se quedará en blanco.
 
+        if( !(isNaN(numero_positivo) || numero_positivo < 0)){
+            console.log(numero_positivo)
+        }
+        
     </script>
 </body>
 </html>

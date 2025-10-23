@@ -9,15 +9,32 @@
     <script>
 
         //Crea una aplicación web que pida al usuario un número entero positivo.
+        //Si lo que el usuario escribe no es un número o no es positivo, la página no mostrará nada. Se quedará en blanco.
+        /*La aplicación escribirá un triángulo con tantos asteriscos como indique el número del usuario o usuaria.
+        Para que el efecto sea más efectivo usaremos, para escribir los asteriscos, una letra monoespaciada.
+        Ejemplo de resultado si el usuario indica el número 5:
+
+        *
+        * *
+        * * *
+        * * * *
+        * * * * *
+        
+        */
 
         var numero_positivo = parseInt(prompt("Dime un número entero positivo: "))
 
-        //Si lo que el usuario escribe no es un número o no es positivo, la página no mostrará nada. Se quedará en blanco.
-
         if( !(isNaN(numero_positivo) || numero_positivo < 0)){
-            console.log(numero_positivo)
+            var ast = "*"
+            var cadena = ""
+            var i = 0
+
+            while(numero_positivo > i){
+            cadena += ast
+            console.log(cadena)
+            i++;
+            }
         }
-        
     </script>
 </body>
 </html>

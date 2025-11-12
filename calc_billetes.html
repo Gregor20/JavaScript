@@ -1,0 +1,65 @@
+<!-- Calculadora de billetes:
+Crea un programa que pida una cantidad de dinero y calcule el número
+mínimo de billetes de 50 €, 20 €, 10 € y 5 € necesarios para
+representarla. Usa condicionales y divisiones enteras. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de billetes</title>
+</head>
+<body>
+    <script>
+        let cantidad = parseInt(prompt("Introduce la cantidad de dinero en euros:"));   // Se pide al usuario que introduzca la cantidad
+
+        let billete_50 = 0                                              
+        let billete_20 = 0
+        let billete_10 = 0                              // Declaracion de variables
+        let billete_5 = 0
+        let monedas = 0
+
+        try{
+
+            if(isNaN(cantidad) || cantidad < 0){                                // Condición del entrada
+                throw new Error("La cantidad debe ser un número mayor a 0")
+            }
+
+                if(cantidad >= 50){                                             // Flujo del codigo
+                    billete_50 = (Math.floor(cantidad / 50))
+                    cantidad = cantidad % 50
+                }
+                if(cantidad >= 20){                                             //
+                    billete_20 = (Math.floor(cantidad / 20))
+                    cantidad = cantidad % 20
+                }
+                if(cantidad >= 10){                                             //
+                    billete_10 = (Math.floor(cantidad / 10))
+                    cantidad = cantidad % 10
+                }
+                if(cantidad >= 5){                                              //
+                    billete_5 = (Math.floor(cantidad / 5))
+                    cantidad = cantidad % 5
+                }
+                if(cantidad > 0){                                              //
+                    monedas = cantidad
+                }
+                
+            console.log(`${billete_50} billetes de 50`)                         // Salida por consola
+            console.log(`${billete_20} billetes de 20`)
+            console.log(`${billete_10} billetes de 10`)
+            console.log(`${billete_5} billetes de 5`)
+            console.log(`${monedas} monedas`)
+        }
+        catch(error){
+            console.error("Error")                                          // Manejo de errores
+            console.error("Mensaje del error:", error.message)
+        }
+        finally{                                                        // "finally" es la parte que SIEMPRE se va a ejecutar
+            console.log("Calculadora terminada!")
+        }
+        
+    </script>
+</body>
+</html>
